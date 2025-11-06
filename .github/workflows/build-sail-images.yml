@@ -79,9 +79,17 @@ jobs:
         with:
           path: ./release-files
 
+      - name: Compress TAR files to ZIP
+        run: |
+          cd release-files
+          find . -type f -name "*.tar" | while read file; do
+            zip "${file%.tar}.zip" "$file"
+            rm -f "$file"
+          done
+
       - name: Create Github Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
           name: Laravel Sail Docker Images
-          files: ./release-files/**/*.tar
+          files: ./release-files/**/*.zip
