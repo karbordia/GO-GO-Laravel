@@ -25,7 +25,9 @@ jobs:
     needs: prepare
     strategy:
       matrix:
-        php-version: [8.1, 8.2, 8.3, 8.4]
+        php-version: [8.4]
+        # php-version: [8.1, 8.2, 8.3, 8.4]
+
 
     steps:
       - name: Download Sail source
@@ -42,7 +44,7 @@ jobs:
 
       - name: Build Sail image
         run : |
-          cd laravel/sail/runtimes/${{ matrix.php-version }}
+          cd sail/runtimes/${{ matrix.php-version }}
           docker build -t laravel-sail-php${{ matrix.php-version }}
 
       - name: Export image to tar
