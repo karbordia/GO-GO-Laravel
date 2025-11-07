@@ -67,5 +67,5 @@ The extracted `.tar` file is the prebuilt Docker image, which you can import int
 
 ```bash
 unzip ~/Downloads/laravel-sail-php8.4-mini.zip -d ~/Downloads
-docker load -i ~/Downloads/laravel-sail-php8.4-mini.tar
+docker load -i ~/Downloads/sail-php8.4-mini/laravel-sail-php8.4-mini.tar
 ```
