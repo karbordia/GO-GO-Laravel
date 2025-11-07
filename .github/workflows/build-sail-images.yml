@@ -57,7 +57,7 @@ jobs:
             sed -i -E 's/^[[:space:]]*(.*npx playwright install-deps.*)/#\1/' Dockerfile || true
             # ---------------- END REMOVE NODE AND YARN -----------------------
           fi
-          docker build --build-arg WWWGROUP=1010 -t laravel-sail-php${{ matrix.php-version }}$sail_type_name .
+          docker build --build-arg WWWGROUP=1000 --build-arg WWWUSER=1000 -t laravel-sail-php${{ matrix.php-version }}$sail_type_name .
 
       - name: Export image to tar
         run: |
