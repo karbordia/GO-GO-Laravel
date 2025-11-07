@@ -2,9 +2,7 @@ name: Build laravel Sail Docker Images
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+
 jobs:
   prepare:
     name: Prepare Laravel Sail source
