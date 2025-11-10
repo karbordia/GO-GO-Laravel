@@ -67,7 +67,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sail-${{ matrix.php-version }}/app${{ env.sail_type_name }}
+          name: sail-${{ matrix.php-version }}${{ env.sail_type_name }}
           path: output/sail-${{ matrix.php-version }}${{ env.sail_type_name }}.tar
 
   release:
